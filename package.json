@@ -1,0 +1,31 @@
+{
+  "name": "file-system-cli",
+  "version": "1.0.0",
+  "description": "File system CLI with Node.js",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server",
+    "dev": "nodemon src/server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psworkps/file-system-cli.git"
+  },
+  "keywords": [
+    "file system",
+    "file system cli",
+    "cli with node.js"
+  ],
+  "author": "Prakash Sharma - prakash.sharma369@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/psworkps/file-system-cli/issues"
+  },
+  "homepage": "https://github.com/psworkps/file-system-cli#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
