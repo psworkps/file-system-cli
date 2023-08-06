@@ -1,0 +1,48 @@
+<div class="dir-container">
+    <form method="post" action="/filesystem/list">
+
+        <input type="hidden" name="dirName" value=<%=`${baseDir}/` %> />
+        <button type="submit" name=""><a href="" name=" dirName" id="showDir">
+                <%= baseDir %>
+            </a></button>
+    </form>
+    <div class="dir-sub-container">
+
+        <% if (mascots !='' ) { %>
+            <% mascots.forEach(function(mascot) { %>
+
+
+                <div>
+                    <script>
+                        function storeURL(e) {
+                        }
+                    </script>
+                    <form method="post" action="/" id="linkClicked">
+
+                        <input type="hidden" id="dirName" name="dirName" value=<%=`${baseDir}/${mascot}` %> />
+                        <button type="submit" name="" onclick="storeURL()"><a href="" name=" dirName" id="showDir">
+                                <img name="dirName" src="./images/folder.png" />
+                                <%= mascot %>
+                            </a></button>
+                    </form>
+                </div>
+                <div>
+                    <form method="post" action="/filesystem/delete">
+
+                        <input type="hidden" name="dirName" value=<%=`${baseDir}/${mascot}` %> />
+                        <button type="submit" name="Delete"><a href="" name=" dirName" id="delDir">
+
+                                <img name="dirName" src="https://cdn-icons-png.flaticon.com/512/3405/3405244.png" />
+                            </a></button>
+                    </form>
+                </div>
+
+                <% }); %>
+
+                    <% }else { %>
+                        <p>Directory is empty</p>
+                        <% } %>
+
+    </div>
+
+</div>

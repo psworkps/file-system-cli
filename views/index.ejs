@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
+    <link rel="stylesheet"
+        href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css">
+    <title>html form</title>
+</head>
+
+<body>
+    <div class="main-container">
+
+        <button><a href="/">Home</a></button>
+        <form method="POST" action="/filesystem/create">
+
+
+            <input type="text" name="ParentDirName" readonly id="ParentDirName">
+            <input type="text" name="dirName" placeholder="Enter Directory Name" onchange="parentDir()" required>
+            <input class="main-button" type="submit" value="Create Directory">
+        </form>
+    </div>
+    <%- include('filesystem-view'); %>
+
+</body>
+<script>
+    function parentDir() {
+        document.getElementById("ParentDirName").value = window.localStorage.getItem("curURL");
+        window.localStorage.removeItem("curURL");
+    }
+</script>
+
+</html>

@@ -1,0 +1,52 @@
+.main-container {
+    max-width: 800px;
+    margin: 60px auto;
+    background-color: rgba(130, 184, 219, 0.5);
+    border: 5px solid rgb(98, 143, 228);
+}
+
+.main-container form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-container form input {
+    margin: 15px;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 0.4rem;
+}
+
+.main-container form input {
+    flex: 1 1 200px;
+}
+
+.main-container form input[type="submit"] {
+    border-radius: 3px;
+    background-color: rgba(29, 78, 111, 0.5);
+    color: rgb(255, 255, 255);
+}
+
+.main-container form input[type="email"] {
+    flex: 1 1 250px;
+}
+
+.dir-container {
+    max-width: 800px;
+    margin: 60px auto;
+    background-color: rgba(90, 122, 176, 0.5);
+    border: 5px solid rgb(98, 143, 228);
+}
+
+.dir-container img {
+    max-width: 2%;
+}
+
+.dir-container button {
+    background: none;
+    border: none;
+    display: contents;
+}
+
+.dir-sub-container {
+    padding: 20px;
+}
