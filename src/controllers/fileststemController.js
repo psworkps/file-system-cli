@@ -18,7 +18,7 @@ const createDirectory = async (req, res) => {
         await mkdir(path.join(__dirname, '..', '..', 'filesystem', newDirName, req.body.dirName));
         res.redirect('/');
     } catch (err) {
-        res.status(500).json({ 'message': err.message });
+        res.redirect('/?error=' + encodeURIComponent('Directory_Already_Exists'));
     }
     console.log(path.join(__dirname, '..', '..', 'filesystem'))
 }

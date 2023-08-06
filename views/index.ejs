@@ -12,8 +12,10 @@
 
 <body>
     <div class="main-container">
-
-        <button><a href="/">Home</a></button>
+        <div class="alert alert-error" role="alert" id="loginAlert">
+            <p style="text-align: center;">Directory Already Exists</p>
+        </div>
+        <button class="home-button"><a href="/">Home</a></button>
         <form method="POST" action="/filesystem/create">
 
 
@@ -25,11 +27,19 @@
     <%- include('filesystem-view'); %>
 
 </body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script>
     function parentDir() {
         document.getElementById("ParentDirName").value = window.localStorage.getItem("curURL");
         window.localStorage.removeItem("curURL");
     }
+    $('#loginAlert').hide();
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParam = urlParams.get('error');
+    if (myParam == "Directory_Already_Exists") {
+        $('#loginAlert').show();
+    }
+
 </script>
 
 </html>
